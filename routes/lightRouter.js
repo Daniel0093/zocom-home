@@ -8,8 +8,8 @@ router.get('/:id/on', (req, res) => {
     let id= req.params.id;
     db
     .get('devices')
-    .find({ id : id }) // Leta reda på en viss ID - det som står efter kolon återfinns i req.params
-    .assign({ on : true }) // Slå på enheten
+    .find({ id : id }) 
+    .assign({ on : true }) 
     .value();
     update();
 
@@ -23,9 +23,9 @@ router.get('/:id/off', (req, res) => {
     db
     .get('devices')
     .find({ id : id })
-    .assign({ on : false }) // Slå av enheten
+    .assign({ on : false }) 
     .value();
-    update(); // berätta till frontend att uppdatera state
+    update(); 
 
     res.send(`Light with ID ( ${id} ) is off!`)
 })

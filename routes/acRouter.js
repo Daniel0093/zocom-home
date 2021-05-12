@@ -10,7 +10,7 @@ router.get('/:id/on', (req, res) => {
     db
     .get('devices')
     .find({ id : id })
-    .assign({ on : true, temperature : 13 }) // Slå på enheten och ändra temperaturen till 15°
+    .assign({ on : true, temperature : 13 }) // Slå på enheten och ändra temperaturen till 13°
     .value();
     update();
     res.send('AC is on!')
@@ -20,7 +20,7 @@ router.get('/:id/off', (req, res) => {
     let id= req.params.id;
     db
     .get('devices')
-    .find({ id : id }) // Leta reda på en viss ID - det som står efter kolon återfinns i req.params
+    .find({ id : id }) 
     .assign({ on : false }) // Slå av enheten
     .value();
     update(); // berätta till frontend att uppdatera state

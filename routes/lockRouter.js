@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = new Router();
 const { db, update } = require('../db/index');
 
-// Här menar vi 'http://localhost:3000/lockfrontdoor/LOC1/lock'
+// Här menar vi 'http://localhost:3000/lock/LOC1/lock'
 
 router.get('/:id/lock', (req, res) => {
     let id= req.params.id;
@@ -16,7 +16,7 @@ router.get('/:id/lock', (req, res) => {
     res.send(`Front door is locked!`)
 })
 
-// Här menar vi 'http://localhost:3000/lockfrontdoor/LOC1/unlock'
+// Här menar vi 'http://localhost:3000/lock/LOC1/unlock'
 
 router.get('/:id/unlock', (req, res) => {
     let id= req.params.id;
@@ -30,4 +30,4 @@ router.get('/:id/unlock', (req, res) => {
     res.send(`Front door is unlocked!`)
 })
 
-module.exports = router; // Exportera router till vår main fil ( index.js )
+module.exports = router; 

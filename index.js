@@ -18,8 +18,8 @@ const vacuumRouter = require('./routes/vacuumRouter')
 const speakerRouter = require('./routes/speakerRouter')
 
 
-// Här använder vi alla router som vi redan importerat
-// Vi lägger resurser till alla router för att kunna nå dem sen
+
+// Vi lägger resurser till alla router för att kunna nå dem sedan
 
 app.use('/ac', acRouter)
 app.use('/blindlroom', blindRouter)
@@ -30,7 +30,7 @@ app.use('/vacuum', vacuumRouter)
 app.use('/speaker', speakerRouter)
 
 
-// Om man ange ett fel path så hamnar i 404 sidan
+// Om man ange ett fel path så visas fel message
 
 app.get('*', (req, res) => {
     res.status(404).send('Page is not found!')

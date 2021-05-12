@@ -9,8 +9,8 @@ router.get('/:id/on', (req, res) => {
     console.log(id)
     db
     .get('devices')
-    .find({ id : id }) // Leta reda på en viss ID - det som står efter kolon återfinns i req.params
-    .assign({ on : true }) // Slå på enheten
+    .find({ id : id }) 
+    .assign({ on : true }) 
     .value();
     update();
 
@@ -26,9 +26,9 @@ router.get('/:id/off', (req, res) => {
     .find({ id : id })
     .assign({ on : false }) // Slå av enheten
     .value();
-    update(); // berätta till frontend att uppdatera state
+    update(); 
 
     res.send('Vacuum is off!')
 })
 
-module.exports = router; // Exportera router till vår main fil ( index.js )
+module.exports = router; 
